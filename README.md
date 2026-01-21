@@ -2,6 +2,8 @@
 
 This repo packages Anthropic's original performance take-home as a single [Harbor](https://github.com/laude-institute/harbor) task.
 
+Upstream source: https://github.com/anthropics/original_performance_takehome
+
 ## Install Harbor
 
 ```bash
