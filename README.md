@@ -4,6 +4,8 @@ This repo packages Anthropic's original performance take-home as a single [Harbo
 
 Upstream source: https://github.com/anthropics/original_performance_takehome
 
+Default timeouts: 2 hours (agent) + 2 hours (verifier).
+
 ## Install Harbor
 
 ```bash
@@ -28,4 +30,13 @@ harbor trials start \
   --task-git-url https://github.com/voctory/performance-takehome-bench.git \
   --path original-performance-takehome \
   --agent oracle
+```
+
+## Timeouts
+
+The task defaults to 2 hours for both the agent and verifier. You can scale these with `--timeout-multiplier`:
+
+```bash
+# Example: give 4 hours total (2h * 2.0) for agent+verifier timeouts
+harbor run --path . --agent oracle --n-concurrent 1 -k 1 --timeout-multiplier 2.0
 ```
