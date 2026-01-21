@@ -1,10 +1,29 @@
 # Performance Takehome (Harbor Task)
 
-This repo packages Anthropic's original performance take-home as a single [Harbor](../harbor) task.
+This repo packages Anthropic's original performance take-home as a single [Harbor](https://github.com/laude-institute/harbor) task.
 
-Run locally with Harbor (from `../harbor`):
+## Install Harbor
 
 ```bash
-uv run harbor run --path ../performance-takehome-bench --agent oracle --n-concurrent 1 -k 1
+uv tool install harbor
+# or
+pip install harbor
 ```
 
+## Run (local checkout)
+
+```bash
+git clone https://github.com/voctory/performance-takehome-bench.git
+cd performance-takehome-bench
+
+harbor run --path . --agent oracle --n-concurrent 1 -k 1
+```
+
+## Run (no checkout; Harbor pulls from Git)
+
+```bash
+harbor trials start \
+  --task-git-url https://github.com/voctory/performance-takehome-bench.git \
+  --path original-performance-takehome \
+  --agent oracle
+```
